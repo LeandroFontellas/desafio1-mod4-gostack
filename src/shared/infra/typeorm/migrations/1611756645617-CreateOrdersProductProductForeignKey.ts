@@ -4,7 +4,7 @@ export default class CreateOrdersProductProductForeignKey1611756645617
   implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createForeignKey(
-      'orders_product',
+      'orders_products',
       new TableForeignKey({
         name: 'OrdersProductProduct', // colocando nome dessa tableforeignkey pra ficar mais facil de deletar dps
         columnNames: ['product_id'], // quais colunas que vao receber o valor de uma tabela estrangeira
@@ -17,6 +17,6 @@ export default class CreateOrdersProductProductForeignKey1611756645617
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropForeignKey('orders_product', 'OrdersProductProduct');
+    await queryRunner.dropForeignKey('orders_products', 'OrdersProductProduct');
   }
 }
